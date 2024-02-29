@@ -1,4 +1,4 @@
-import { IconUser } from "@tabler/icons-react";
+import { IconUser } from '@tabler/icons-react';
 
 const Navbar = () => {
   return (

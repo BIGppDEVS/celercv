@@ -3,8 +3,8 @@ import {
   IconBuildingCarousel,
   IconDog,
   IconDownload,
-  IconLink,
-} from "@tabler/icons-react";
+  IconLink
+} from '@tabler/icons-react';
 
 const OnboardingSection = () => (
   <section className="w-full container px-36 py-28 ">

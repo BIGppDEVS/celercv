@@ -1,4 +1,4 @@
-import { IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight } from '@tabler/icons-react';
 
 const HeroSection = () => {
   return (
@@ -31,10 +31,10 @@ const HeroSection = () => {
         </div>
         <div className="mt-5 max-w-4xl text-center mx-auto">
           <h1 className="block font-extrabold  text-4xl md:text-5xl lg:text-6xl">
-            Free{" "}
+            Free{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">
               resume builder
-            </span>{" "}
+            </span>{' '}
             for modern job seekers
           </h1>
         </div>

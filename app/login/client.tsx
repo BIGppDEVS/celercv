@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Link from "next/link";
+import Link from 'next/link';
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
+import { Icons } from '@/components/icons';
 
-import { UserAuthForm } from "@/components/user-auth-form";
-import { useEffect, useState } from "react";
+import { UserAuthForm } from '@/components/user-auth-form';
+import { useEffect, useState } from 'react';
 import {
   User,
-  createClientComponentClient,
-} from "@supabase/auth-helpers-nextjs";
-import { redirect } from "next/navigation";
+  createClientComponentClient
+} from '@supabase/auth-helpers-nextjs';
+import { redirect } from 'next/navigation';
 
 export default function LoginClient() {
   const [user, setUser] = useState<User | null>(null);
@@ -20,7 +20,7 @@ export default function LoginClient() {
 
   useEffect(() => {
     if (user) {
-      redirect("/dashboard");
+      redirect('/dashboard');
     }
   }, [user]);
 
@@ -29,7 +29,7 @@ export default function LoginClient() {
   useEffect(() => {
     async function fetchUser() {
       const {
-        data: { user },
+        data: { user }
       } = await supabase.auth.getUser();
       setAuthenticating(false);
       setUser(user);
@@ -38,7 +38,7 @@ export default function LoginClient() {
   }, []);
 
   if (user && !authenticating) {
-    redirect("/dashboard");
+    redirect('/dashboard');
   }
 
   return (
@@ -46,8 +46,8 @@ export default function LoginClient() {
       <Link
         href="/"
         className={cn(
-          buttonVariants({ variant: "ghost" }),
-          "absolute left-4 top-4 md:left-8 md:top-8"
+          buttonVariants({ variant: 'ghost' }),
+          'absolute left-4 top-4 md:left-8 md:top-8'
         )}
       >
         <Icons.chevronLeft className="mr-2 h-4 w-4" />

@@ -1,10 +1,10 @@
-import FAQSection from "@/components/faq";
-import FeatureGrid from "@/components/featureGrid";
-import Footer from "@/components/footer";
-import HeroSection from "@/components/hero";
-import Navbar from "@/components/navbar";
-import OnboardingSection from "@/components/onboarding";
-import ShowcaseSection from "@/components/showcase";
+import FAQSection from '@/components/faq';
+import FeatureGrid from '@/components/featureGrid';
+import Footer from '@/components/footer';
+import HeroSection from '@/components/hero';
+import Navbar from '@/components/navbar';
+import OnboardingSection from '@/components/onboarding';
+import ShowcaseSection from '@/components/showcase';
 
 export default function Home() {
   return (

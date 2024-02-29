@@ -1,12 +1,12 @@
-import { redirect } from "next/navigation";
-import { createClient } from "@/utils/supabase/server";
-import { Button } from "@/components/ui/button";
+import { redirect } from 'next/navigation';
+import { createClient } from '@/utils/supabase/server';
+import { Button } from '@/components/ui/button';
 
 export default async function PrivatePage() {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
 
-  (error || !data?.user) && redirect("/login");
+  (error || !data?.user) && redirect('/login');
 
   return (
     <div>

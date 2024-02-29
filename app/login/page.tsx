@@ -1,23 +1,23 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
+import { Icons } from '@/components/icons';
 
-import { UserAuthForm } from "@/components/user-auth-form";
+import { UserAuthForm } from '@/components/user-auth-form';
 
-import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
+import { createClient } from '@/utils/supabase/server';
+import { redirect } from 'next/navigation';
 
 export type NextPageProps = {
   searchParams: { [key: string]: string | undefined };
 };
 
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  description: "",
-  title: "",
+  description: '',
+  title: ''
 };
 
 export default async function LoginPage(
@@ -28,15 +28,15 @@ export default async function LoginPage(
   const supabase = createClient();
   const { data } = await supabase.auth.getUser();
 
-  if (data?.user) redirect("/dashboard");
+  if (data?.user) redirect('/dashboard');
 
   return (
     <div className="container flex h-screen w-screen flex-col items-center justify-center">
       <Link
         href="/"
         className={cn(
-          buttonVariants({ variant: "ghost" }),
-          "absolute left-4 top-4 md:left-8 md:top-8"
+          buttonVariants({ variant: 'ghost' }),
+          'absolute left-4 top-4 md:left-8 md:top-8'
         )}
       >
         <Icons.chevronLeft className="mr-2 h-4 w-4" />

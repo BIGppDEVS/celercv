@@ -1,9 +1,9 @@
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Icons } from "@/components/icons";
-import { login, signup } from "@/app/login/actions";
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Icons } from '@/components/icons';
+import { login, signup } from '@/app/login/actions';
 
 export interface UserAuthFormProps
   extends React.HTMLAttributes<HTMLDivElement> {
@@ -16,7 +16,7 @@ export function UserAuthForm({
   ...props
 }: UserAuthFormProps) {
   return (
-    <div className={cn("grid gap-6", className)} {...props}>
+    <div className={cn('grid gap-6', className)} {...props}>
       <form>
         <div className="grid gap-2">
           <div className="grid gap-1 mb-4">
@@ -54,7 +54,7 @@ export function UserAuthForm({
           </button>
           <button
             formAction={signup}
-            className={cn(buttonVariants({ variant: "secondary" }))}
+            className={cn(buttonVariants({ variant: 'secondary' }))}
           >
             Sign Up with Email
           </button>
@@ -72,7 +72,7 @@ export function UserAuthForm({
       </div>
       <button
         type="button"
-        className={cn(buttonVariants({ variant: "outline" }))}
+        className={cn(buttonVariants({ variant: 'outline' }))}
         // onClick={}
       >
         <Icons.chrome className="mr-2 h-4 w-4" />

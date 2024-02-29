@@ -1,11 +1,8 @@
-import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
-import { NextResponse } from 'next/server';
+import { NextRequest } from 'next/server';
+import { updateSession } from './utils/supabase/middleware';
 
-export async function middleware(req: any) {
-  const res = NextResponse.next();
-  const supabase = createMiddlewareClient({ req, res }); // create a supabase client configured to use cookies
-  await supabase.auth.getUser(); // refresh session if expired - required for server components
-  return res;
+export async function middleware(request: NextRequest) {
+  return await updateSession(request);
 }
 
 export const config = {
@@ -16,6 +13,6 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    '/((?!_next/static|_next/image|favicon.ico).*)'
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)'
   ]
 };

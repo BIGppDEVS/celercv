@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { toast } from "@/components/ui/use-toast";
-import { Icons } from "@/components/icons";
+import { cn } from '@/lib/utils';
+import { buttonVariants } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { toast } from '@/components/ui/use-toast';
+import { Icons } from '@/components/icons';
 
-import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
-import { useRouter } from "next/navigation";
+import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import { useRouter } from 'next/navigation';
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isGitHubLoading, setIsGitHubLoading] = useState<boolean>(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
   const supabase = createClientComponentClient();
 
@@ -27,8 +27,8 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       email,
       password,
       options: {
-        emailRedirectTo: `${location.origin}/auth/callback`,
-      },
+        emailRedirectTo: `${location.origin}/auth/callback`
+      }
     });
     router.refresh();
     window.location.reload(); // makeshift: should not be here, router.refresh ideally should work
@@ -37,15 +37,15 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const handleSignIn = async () => {
     const data = await supabase.auth.signInWithPassword({
       email,
-      password,
+      password
     });
 
     // todo: handle gracefully
     !data.data.user &&
       toast({
-        title: "Something went wrong.",
-        description: "Your sign in request failed. Please try again.",
-        variant: "destructive",
+        title: 'Something went wrong.',
+        description: 'Your sign in request failed. Please try again.',
+        variant: 'destructive'
       });
 
     router.refresh();
@@ -53,7 +53,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   };
 
   return (
-    <div className={cn("grid gap-6", className)} {...props}>
+    <div className={cn('grid gap-6', className)} {...props}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -108,7 +108,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </button>
           <button
             onClick={handleSignUp}
-            className={cn(buttonVariants({ variant: "secondary" }))}
+            className={cn(buttonVariants({ variant: 'secondary' }))}
             disabled={isLoading}
           >
             {isLoading && (
@@ -130,10 +130,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       </div>
       <button
         type="button"
-        className={cn(buttonVariants({ variant: "outline" }))}
+        className={cn(buttonVariants({ variant: 'outline' }))}
         onClick={() => {
           setIsGitHubLoading(true);
-          alert("implementation pending!!");
+          alert('implementation pending!!');
         }}
         disabled={isLoading || isGitHubLoading}
       >
@@ -141,7 +141,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
         ) : (
           <Icons.chrome className="mr-2 h-4 w-4" />
-        )}{" "}
+        )}{' '}
         Google
       </button>
     </div>

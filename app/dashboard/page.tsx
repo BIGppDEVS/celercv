@@ -1,9 +1,9 @@
-import { Metadata } from "next";
-import DashboardClient from "./client";
+import { Metadata } from 'next';
+import DashboardClient from './client';
 
 export const metadata: Metadata = {
-  title: "celerCV | Dashboard",
-  description: "",
+  title: 'celerCV | Dashboard',
+  description: ''
 };
 
 const Dashboard = () => {

@@ -1,19 +1,19 @@
 const highlights: Array<Record<string, string>> = [
   {
-    title: "Smart",
+    title: 'Smart',
     description:
-      "Forget about Word templates and hours of editing. Powered by intelligent technologies, celerCV will save your time and guide you to the best version of your resume.",
+      'Forget about Word templates and hours of editing. Powered by intelligent technologies, celerCV will save your time and guide you to the best version of your resume.'
   },
   {
-    title: "Fast",
+    title: 'Fast',
     description:
-      "Forget about Word templates and hours of editing. Powered by intelligent technologies, celerCV will save your time and guide you to the best version of your resume.",
+      'Forget about Word templates and hours of editing. Powered by intelligent technologies, celerCV will save your time and guide you to the best version of your resume.'
   },
   {
-    title: "Free",
+    title: 'Free',
     description:
-      "Everything necessary to build and download a job-winning resume is entirely free.",
-  },
+      'Everything necessary to build and download a job-winning resume is entirely free.'
+  }
 ];
 
 const FeatureGrid = () => {

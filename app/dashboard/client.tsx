@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import {
   User,
-  createClientComponentClient,
-} from "@supabase/auth-helpers-nextjs";
+  createClientComponentClient
+} from '@supabase/auth-helpers-nextjs';
 
-import { redirect } from "next/navigation";
-import { Button } from "@/components/ui/button";
+import { redirect } from 'next/navigation';
+import { Button } from '@/components/ui/button';
 
 const Dashboard = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -26,7 +26,7 @@ const Dashboard = () => {
   useEffect(() => {
     async function fetchUser() {
       const {
-        data: { user },
+        data: { user }
       } = await supabase.auth.getUser();
       setUser(user);
       setAuthenticating(false);
@@ -36,7 +36,7 @@ const Dashboard = () => {
   }, []);
 
   if (!user && !authenticating) {
-    redirect("/login");
+    redirect('/login');
   }
 
   return (

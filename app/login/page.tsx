@@ -1,9 +1,9 @@
-import { Metadata } from "next";
-import LoginClient from "./client";
+import { Metadata } from 'next';
+import LoginClient from './client';
 
 export const metadata: Metadata = {
-  title: "celerCV | Login",
-  description: "Login to your account",
+  title: 'celerCV | Login',
+  description: 'Login to your account'
 };
 
 const Login = () => {

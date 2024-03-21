@@ -4,9 +4,17 @@ import { Button } from '@/components/ui/button';
 
 export default async function PrivatePage() {
   const supabase = createClient();
-  const { data, error } = await supabase.auth.getUser();
 
+  const { data, error } = await supabase.auth.getUser();
   (error || !data?.user) && redirect('/login');
+
+  // const { data: users } = await supabase.from('users').select();
+  const { data: profile } = await supabase
+    .from('users')
+    .select()
+    .eq('email', data?.user?.email);
+
+  (!profile || profile.length === 0) && redirect('/onboarding');
 
   return (
     <div>
@@ -28,15 +36,7 @@ export default async function PrivatePage() {
               <p className="mt-3 text-xl font-semibold font-mono text-rose-600">
                 ---- protected route ----
               </p>
-            </div>
-
-            <div className="lg:col-span-4 mt-10 lg:mt-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                className="w-full rounded-xl"
-                src="https://images.unsplash.com/photo-1708312606974-2eaeb24c965f?q=80&w=2864&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="Image Description"
-              />
+              <p>{JSON.stringify(profile, null, 2)}</p>
             </div>
           </div>
         </div>

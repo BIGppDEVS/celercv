@@ -74,3 +74,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .debug {
+    @apply border border-red-500;
+  }
+
+  .horizontal {
+    @apply flex flex-row;
+  }
+
+  .vertical {
+    @apply flex flex-col;
+  }
+}

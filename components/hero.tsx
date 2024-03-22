@@ -30,12 +30,12 @@ const HeroSection = () => {
           </a>
         </div>
         <div className="mt-5 max-w-4xl text-center mx-auto">
-          <h1 className="block font-extrabold  text-4xl md:text-5xl lg:text-6xl">
-            Free{' '}
+          <h1 className="block font-extrabold text-4xl md:text-5xl lg:text-6xl">
+            Free&nbsp;
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">
               resume builder
-            </span>{' '}
-            for modern job seekers
+            </span>
+            &nbsp;for modern job seekers
           </h1>
         </div>
         <div className="mt-5 max-w-3xl text-center mx-auto">
@@ -43,7 +43,6 @@ const HeroSection = () => {
             Make you profile visible to world with celerCV
           </p>
         </div>
-        ̦
         <div className="mt-8 gap-3 flex justify-center">
           <a
             className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-yellow-600 to-orange-600 hover:from-orange-600 hover:to-amber-600 border border-transparent text-white text-sm font-medium rounded-full py-3 px-4"

@@ -47,7 +47,7 @@ const HeroSection = () => {
         <div className="mt-8 gap-3 flex justify-center">
           <a
             className="inline-flex justify-center items-center gap-x-3 text-center bg-gradient-to-tl from-yellow-600 to-orange-600 hover:from-orange-600 hover:to-amber-600 border border-transparent text-white text-sm font-medium rounded-full py-3 px-4"
-            href="#"
+            href="/login"
           >
             Get Started
             <IconArrowRight size={24} />

@@ -73,7 +73,6 @@ export function UserAuthForm({
       <button
         type="button"
         className={cn(buttonVariants({ variant: 'outline' }))}
-        // onClick={}
       >
         <Icons.chrome className="mr-2 h-4 w-4" />
         Google

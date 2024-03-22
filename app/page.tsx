@@ -1,5 +1,5 @@
 import FAQSection from '@/components/faq';
-import FeatureGrid from '@/components/featureGrid';
+import FeatureGrid from '@/components/feature-grid';
 import Footer from '@/components/footer';
 import HeroSection from '@/components/hero';
 import Navbar from '@/components/navbar';

@@ -111,7 +111,7 @@ const OnboardingSection = () => (
 
           <div className="grow pt-0.5 pb-8">
             <h3 className="flex gap-x-1.5 font-semibold text-gray-800 dark:text-white">
-              Download Resume with pre-build Templates
+              Download Resume with Prebuilt Templates
             </h3>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
               subheading

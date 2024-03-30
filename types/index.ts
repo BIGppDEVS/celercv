@@ -6,5 +6,5 @@ export type Profile = {
   bio: string;
   location: string;
   website: string;
-  github: string;
+  // github: string;
 };

@@ -39,7 +39,7 @@ const HeroSection = () => {
           </h1>
         </div>
         <div className="mt-5 max-w-3xl text-center mx-auto">
-          <p className="text-lg text-gray-600 dark:text-gray-400 font-mono">
+          <p className="text-lg text-gray-600 dark:text-gray-400 italic">
             Make you profile visible to world with celerCV
           </p>
         </div>

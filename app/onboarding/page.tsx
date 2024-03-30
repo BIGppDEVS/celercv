@@ -59,7 +59,7 @@ export default async function PrivatePage() {
                       Sam Altman
                     </div>
                     <div className="text-xs text-gray-500">
-                      works at openai occasiionaly, super gay
+                      works at openai occasionally, super gay
                     </div>
                   </div>
                 </div>
